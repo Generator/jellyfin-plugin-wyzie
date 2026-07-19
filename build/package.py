@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Build and package Wyzie Subtitles releases for Jellyfin and Emby.
 
-For each Jellyfin target (10.9 / 10.10 / 10.11) we produce a zip whose
-manifest version is suffixed with a numeric ABI marker (109 / 1010 / 1011)
-so all three can coexist in manifest.json. Jellyfin filters each entry by
+For each Jellyfin target (10.11 / 12.0) we produce a zip whose
+manifest version is suffixed with a numeric ABI marker (1011 / 120)
+so both can coexist in manifest.json. Jellyfin filters each entry by
 its targetAbi field and picks the one compatible with the running server.
 
 Usage:
@@ -61,8 +61,6 @@ JELLYFIN_OWNER = "wyzie"
 
 # Jellyfin target → (targetAbi, numeric version suffix, SDK hint).
 JELLYFIN_TARGETS = {
-    "10.9":  ("10.9.0.0",  "109",  "net8.0"),
-    "10.10": ("10.10.0.0", "1010", "net8.0"),
     "10.11": ("10.11.0.0", "1011", "net9.0"),
     "12.0":  ("12.0.0.0",  "120",  "net10.0"),
 }
@@ -81,12 +79,13 @@ def run(cmd: list[str]) -> None:
     subprocess.run(cmd, check=True)
 
 
-def publish_jellyfin(jf_version: str, out_dir: pathlib.Path) -> None:
+def publish_jellyfin(jf_version: str, manifest_version: str, out_dir: pathlib.Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     run([
         "dotnet", "publish", str(JELLYFIN_CSPROJ),
         "-c", "Release",
         f"-p:JellyfinVersion={jf_version}",
+        f"-p:Version={manifest_version}",
         "-o", str(out_dir),
         "--nologo",
     ])
@@ -179,8 +178,8 @@ def main() -> int:
     p.add_argument("--changelog", default="", help="Release notes blurb")
     p.add_argument(
         "--jellyfin",
-        default="10.9,10.10,10.11,12.0",
-        help="Comma-separated Jellyfin targets to build (default: all four).",
+        default="10.11,12.0",
+        help="Comma-separated Jellyfin targets to build (default: 10.11 and 12.0).",
     )
     p.add_argument("--skip-emby", action="store_true")
     args = p.parse_args()
@@ -204,7 +203,7 @@ def main() -> int:
         manifest_version = f"{sanitize_version_for_manifest(base_version)}.{suffix}"
 
         publish_dir = ARTIFACTS / f"publish-jf-{jf_version}"
-        publish_jellyfin(jf_version, publish_dir)
+        publish_jellyfin(jf_version, manifest_version, publish_dir)
 
         zip_path = build_jellyfin_zip(
             jf_version, manifest_version, args.changelog, timestamp, target_abi, publish_dir,
