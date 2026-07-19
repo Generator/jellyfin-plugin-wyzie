@@ -33,7 +33,7 @@ the .NET 8 SDK.
 `Dashboard → Plugins → Repositories → +` and add:
 
 ```
-https://raw.githubusercontent.com/<OWNER>/<REPO>/main/manifest.json
+https://raw.githubusercontent.com/Generator/jellyfin-plugin-wyzie/main/manifest.json
 ```
 
 Then `Catalog → Subtitles → Wyzie Subtitles → Install`, restart the server,
