@@ -19,6 +19,7 @@ import datetime
 import hashlib
 import json
 import pathlib
+import re
 import shutil
 import subprocess
 import sys
@@ -26,6 +27,35 @@ import zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ARTIFACTS = ROOT / "artifacts"
+
+
+def sanitize_version_for_manifest(version: str) -> str:
+    """Convert version string to numeric-only format for System.Version.Parse().
+
+    Examples:
+        '1.0.3-beta' → '1.0.3.0'
+        '1.0.3-beta.1' → '1.0.3.1'
+        '1.0.0' → '1.0.0.0'
+    """
+    # Split on first hyphen to separate base from pre-release label
+    parts = version.split('-', 1)
+    base = parts[0]
+
+    # Extract numeric build number from pre-release label if present
+    if len(parts) > 1:
+        pre_release = parts[1]
+        # Find trailing digits in the pre-release label
+        match = re.search(r'(\d+)$', pre_release)
+        build = match.group(1) if match else '0'
+    else:
+        build = '0'
+
+    # Ensure base has at least 3 components (major.minor.patch)
+    base_parts = base.split('.')
+    while len(base_parts) < 3:
+        base_parts.append('0')
+
+    return f"{'.'.join(base_parts[:3])}.{build}"
 
 JELLYFIN_CSPROJ = ROOT / "src/Jellyfin.Plugin.Wyzie/Jellyfin.Plugin.Wyzie.csproj"
 EMBY_CSPROJ = ROOT / "src/Emby.Plugin.Wyzie/Emby.Plugin.Wyzie.csproj"
@@ -181,7 +211,8 @@ def main() -> int:
             print(f"!! unknown Jellyfin target: {jf_version} — skipping", file=sys.stderr)
             continue
         target_abi, suffix, _tfm = JELLYFIN_TARGETS[jf_version]
-        manifest_version = f"{base_version}.{suffix}"
+        # Sanitize version for System.Version.Parse() (must be numeric only)
+        manifest_version = f"{sanitize_version_for_manifest(base_version)}.{suffix}"
 
         publish_dir = ARTIFACTS / f"publish-jf-{jf_version}"
         publish_jellyfin(jf_version, publish_dir)
