@@ -50,12 +50,15 @@ def sanitize_version_for_manifest(version: str) -> str:
     else:
         build = '0'
 
-    # Ensure base has at least 3 components (major.minor.patch)
+    # Ensure base has exactly 3 components (major.minor.patch)
     base_parts = base.split('.')
+    # Pad with zeros if less than 3 components
     while len(base_parts) < 3:
         base_parts.append('0')
+    # Take exactly 3 components
+    base_parts = base_parts[:3]
 
-    return f"{'.'.join(base_parts[:3])}.{build}"
+    return f"{'.'.join(base_parts)}.{build}"
 
 JELLYFIN_CSPROJ = ROOT / "src/Jellyfin.Plugin.Wyzie/Jellyfin.Plugin.Wyzie.csproj"
 EMBY_CSPROJ = ROOT / "src/Emby.Plugin.Wyzie/Emby.Plugin.Wyzie.csproj"
