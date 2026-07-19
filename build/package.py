@@ -30,35 +30,21 @@ ARTIFACTS = ROOT / "artifacts"
 
 
 def sanitize_version_for_manifest(version: str) -> str:
-    """Convert version string to numeric-only format for System.Version.Parse().
+    """Strip non-numeric suffixes (e.g. '-beta') and return major.minor.patch.
+
+    The Jellyfin target suffix is appended later to form the full 4-component
+    System.Version string (e.g. '1.0.3' + '.120' → '1.0.3.120').
 
     Examples:
-        '1.0.3-beta' → '1.0.3.0'
-        '1.0.3-beta.1' → '1.0.3.1'
-        '1.0.0' → '1.0.0.0'
+        '1.0.3-beta' → '1.0.3'
+        '1.0.3' → '1.0.3'
+        '1.0' → '1.0.0'
     """
-    # Split on first hyphen to separate base from pre-release label
-    parts = version.split('-', 1)
-    base = parts[0]
-
-    # Extract numeric build number from pre-release label if present
-    if len(parts) > 1:
-        pre_release = parts[1]
-        # Find trailing digits in the pre-release label
-        match = re.search(r'(\d+)$', pre_release)
-        build = match.group(1) if match else '0'
-    else:
-        build = '0'
-
-    # Ensure base has exactly 3 components (major.minor.patch)
+    base = version.split('-', 1)[0]
     base_parts = base.split('.')
-    # Pad with zeros if less than 3 components
     while len(base_parts) < 3:
         base_parts.append('0')
-    # Take exactly 3 components
-    base_parts = base_parts[:3]
-
-    return f"{'.'.join(base_parts)}.{build}"
+    return '.'.join(base_parts[:3])
 
 JELLYFIN_CSPROJ = ROOT / "src/Jellyfin.Plugin.Wyzie/Jellyfin.Plugin.Wyzie.csproj"
 EMBY_CSPROJ = ROOT / "src/Emby.Plugin.Wyzie/Emby.Plugin.Wyzie.csproj"
