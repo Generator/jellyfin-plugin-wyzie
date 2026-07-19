@@ -10,7 +10,7 @@
     "versions": [
       {
         "version": "1.0.3-beta.120",
-        "changelog": "Release 1.0.3-beta",
+        "changelog": "Pre-release 1.0.3-beta",
         "targetAbi": "12.0.0.0",
         "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3-beta/jellyfin-plugin-wyzie_jf12.0_1.0.3-beta.120.zip",
         "checksum": "57fbffae8d20c240ff8adf6f3b1a3dc9",
@@ -18,7 +18,7 @@
       },
       {
         "version": "1.0.3-beta.109",
-        "changelog": "Release 1.0.3-beta",
+        "changelog": "Pre-release 1.0.3-beta",
         "targetAbi": "10.9.0.0",
         "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3-beta/jellyfin-plugin-wyzie_jf10.9_1.0.3-beta.109.zip",
         "checksum": "97ecd58714580eeca5166990e189b35c",
@@ -26,7 +26,7 @@
       },
       {
         "version": "1.0.3-beta.1011",
-        "changelog": "Release 1.0.3-beta",
+        "changelog": "Pre-release 1.0.3-beta",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3-beta/jellyfin-plugin-wyzie_jf10.11_1.0.3-beta.1011.zip",
         "checksum": "7a63a4aaf37f96eed8a32a39ebcef96a",
@@ -34,83 +34,11 @@
       },
       {
         "version": "1.0.3-beta.1010",
-        "changelog": "Release 1.0.3-beta",
+        "changelog": "Pre-release 1.0.3-beta",
         "targetAbi": "10.10.0.0",
         "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3-beta/jellyfin-plugin-wyzie_jf10.10_1.0.3-beta.1010.zip",
         "checksum": "e4c825a1c62bba5cf8850266e8832b88",
         "timestamp": "2026-07-19T00:42:33Z"
-      },
-      {
-        "version": "1.0.2.109",
-        "changelog": "Release 1.0.2",
-        "targetAbi": "10.9.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.2/jellyfin-plugin-wyzie_jf10.9_1.0.2.109.zip",
-        "checksum": "e164782a0ae75408d193ed32fdc1439c",
-        "timestamp": "2026-04-25T07:27:50Z"
-      },
-      {
-        "version": "1.0.2.1011",
-        "changelog": "Release 1.0.2",
-        "targetAbi": "10.11.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.2/jellyfin-plugin-wyzie_jf10.11_1.0.2.1011.zip",
-        "checksum": "a3c54099781152a122b5f4c262d5c647",
-        "timestamp": "2026-04-25T07:27:50Z"
-      },
-      {
-        "version": "1.0.2.1010",
-        "changelog": "Release 1.0.2",
-        "targetAbi": "10.10.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.2/jellyfin-plugin-wyzie_jf10.10_1.0.2.1010.zip",
-        "checksum": "c38fb331edbd1188bbaefd624731c8d1",
-        "timestamp": "2026-04-25T07:27:50Z"
-      },
-      {
-        "version": "1.0.1.109",
-        "changelog": "Release 1.0.1",
-        "targetAbi": "10.9.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.1/jellyfin-plugin-wyzie_jf10.9_1.0.1.109.zip",
-        "checksum": "23564e1a7acb73094a1a56f3b61140ad",
-        "timestamp": "2026-04-25T03:59:54Z"
-      },
-      {
-        "version": "1.0.1.1011",
-        "changelog": "Release 1.0.1",
-        "targetAbi": "10.11.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.1/jellyfin-plugin-wyzie_jf10.11_1.0.1.1011.zip",
-        "checksum": "bd2e8b6a683e9f0f8633da3c628458b5",
-        "timestamp": "2026-04-25T03:59:54Z"
-      },
-      {
-        "version": "1.0.1.1010",
-        "changelog": "Release 1.0.1",
-        "targetAbi": "10.10.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.1/jellyfin-plugin-wyzie_jf10.10_1.0.1.1010.zip",
-        "checksum": "0a377621d33a39a94c7b438977ce5039",
-        "timestamp": "2026-04-25T03:59:54Z"
-      },
-      {
-        "version": "1.0.0.109",
-        "changelog": "Release 1.0.0",
-        "targetAbi": "10.9.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.0/jellyfin-plugin-wyzie_jf10.9_1.0.0.109.zip",
-        "checksum": "fa28cc812456e0c93a452b7b0a34ca27",
-        "timestamp": "2026-04-24T21:31:51Z"
-      },
-      {
-        "version": "1.0.0.1011",
-        "changelog": "Release 1.0.0",
-        "targetAbi": "10.11.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.0/jellyfin-plugin-wyzie_jf10.11_1.0.0.1011.zip",
-        "checksum": "c82ca3593c21ae8d3e3abf9e39dc6a20",
-        "timestamp": "2026-04-24T21:31:51Z"
-      },
-      {
-        "version": "1.0.0.1010",
-        "changelog": "Release 1.0.0",
-        "targetAbi": "10.10.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.0/jellyfin-plugin-wyzie_jf10.10_1.0.0.1010.zip",
-        "checksum": "156ca9b43d53586caabb0d1fe0c85a4d",
-        "timestamp": "2026-04-24T21:31:51Z"
       }
     ]
   }
