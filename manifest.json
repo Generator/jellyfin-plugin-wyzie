@@ -12,33 +12,33 @@
         "version": "1.0.3.120",
         "changelog": "Release 1.0.3",
         "targetAbi": "12.0.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf12.0_1.0.3.0.120.zip",
-        "checksum": "0d8138a5aa3f661c883a5d4b1517abbf",
-        "timestamp": "2026-07-19T08:59:48Z"
+        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf12.0_1.0.3.120.zip",
+        "checksum": "34684b58ab2fafaf4d992619a4ae6f86",
+        "timestamp": "2026-07-19T09:09:25Z"
       },
       {
         "version": "1.0.3.109",
         "changelog": "Release 1.0.3",
         "targetAbi": "10.9.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf10.9_1.0.3.0.109.zip",
-        "checksum": "c0a29fede9cf1f81f08e62ec1236adc0",
-        "timestamp": "2026-07-19T08:59:48Z"
+        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf10.9_1.0.3.109.zip",
+        "checksum": "d51697e65a1f768655291d38a7e9c749",
+        "timestamp": "2026-07-19T09:09:25Z"
       },
       {
         "version": "1.0.3.1011",
         "changelog": "Release 1.0.3",
         "targetAbi": "10.11.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf10.11_1.0.3.0.1011.zip",
-        "checksum": "312d03b38df9790265ffc4ed83830fe3",
-        "timestamp": "2026-07-19T08:59:48Z"
+        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf10.11_1.0.3.1011.zip",
+        "checksum": "fc05de3160e78cd75ce3f77b44c11602",
+        "timestamp": "2026-07-19T09:09:25Z"
       },
       {
         "version": "1.0.3.1010",
         "changelog": "Release 1.0.3",
         "targetAbi": "10.10.0.0",
-        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf10.10_1.0.3.0.1010.zip",
-        "checksum": "9482e61e9b36cd7a21f9d134bb61e0b7",
-        "timestamp": "2026-07-19T08:59:48Z"
+        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.3/jellyfin-plugin-wyzie_jf10.10_1.0.3.1010.zip",
+        "checksum": "2b89bb73d5db6ccb9bd43b028d6784ae",
+        "timestamp": "2026-07-19T09:09:25Z"
       }
     ]
   }
