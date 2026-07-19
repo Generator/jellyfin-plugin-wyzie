@@ -45,6 +45,7 @@ JELLYFIN_TARGETS = {
     "10.9":  ("10.9.0.0",  "109",  "net8.0"),
     "10.10": ("10.10.0.0", "1010", "net8.0"),
     "10.11": ("10.11.0.0", "1011", "net9.0"),
+    "12.0":  ("12.0.0.0",  "120",  "net10.0"),
 }
 
 
@@ -159,8 +160,8 @@ def main() -> int:
     p.add_argument("--changelog", default="", help="Release notes blurb")
     p.add_argument(
         "--jellyfin",
-        default="10.9,10.10,10.11",
-        help="Comma-separated Jellyfin targets to build (default: all three).",
+        default="10.9,10.10,10.11,12.0",
+        help="Comma-separated Jellyfin targets to build (default: all four).",
     )
     p.add_argument("--skip-emby", action="store_true")
     args = p.parse_args()

@@ -5,13 +5,15 @@
           dotnet build -p:JellyfinVersion=10.9   (default)
           dotnet build -p:JellyfinVersion=10.10
           dotnet build -p:JellyfinVersion=10.11
+          dotnet build -p:JellyfinVersion=12.0
       Output lands under bin/Release/<tfm>/ — the package script copies
       per-version binaries into artifacts/.
     -->
     <JellyfinVersion Condition="'$(JellyfinVersion)' == ''">10.9</JellyfinVersion>
 
+    <TargetFramework Condition="'$(JellyfinVersion)' == '12.0'">net10.0</TargetFramework>
     <TargetFramework Condition="'$(JellyfinVersion)' == '10.11'">net9.0</TargetFramework>
-    <TargetFramework Condition="'$(JellyfinVersion)' != '10.11'">net8.0</TargetFramework>
+    <TargetFramework Condition="'$(JellyfinVersion)' != '10.11' AND '$(JellyfinVersion)' != '12.0'">net8.0</TargetFramework>
 
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
@@ -33,6 +35,11 @@
   <ItemGroup Condition="'$(JellyfinVersion)' == '10.11'">
     <PackageReference Include="Jellyfin.Controller" Version="10.11.5" />
     <PackageReference Include="Jellyfin.Model" Version="10.11.5" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(JellyfinVersion)' == '12.0'">
+    <PackageReference Include="Jellyfin.Controller" Version="12.0.0-rc2" />
+    <PackageReference Include="Jellyfin.Model" Version="12.0.0-rc2" />
   </ItemGroup>
 
   <ItemGroup>
