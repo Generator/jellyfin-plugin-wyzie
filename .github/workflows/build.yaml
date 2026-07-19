@@ -1,0 +1,35 @@
+name: '🏗️ Build Plugin'
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - 'manifest.json'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**/*.md'
+      - 'manifest.json'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: ['8.0.x', '9.0.x']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+
+      - name: Build Jellyfin Plugin
+        run: dotnet build -c Release src/Jellyfin.Plugin.Wyzie/Jellyfin.Plugin.Wyzie.csproj
+
+      - name: Build Emby Plugin
+        run: dotnet build -c Release src/Emby.Plugin.Wyzie/Emby.Plugin.Wyzie.csproj
