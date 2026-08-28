@@ -7,5 +7,7 @@ obj/
 artifacts/
 .omc/
 .claude/
+tools
 
+AGENTS.md
 PLAN.md
