@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "category": "Subtitles",
+    "description": "On-demand subtitle provider backed by sub.wyzie.io.",
+    "guid": "b2c9f7a0-2d4e-4b8f-9a1c-7e3d4c5a6b70",
+    "name": "Wyzie Subtitles",
+    "overview": "Streams subtitle content directly from Wyzie when playback starts. Requires a free API key from https://sub.wyzie.io/redeem.",
+    "owner": "wyzie",
+    "versions": [
+      {
+        "changelog": "Release 1.0.5\n\n- Migrate plugin catalog to gh-pages via jellyfin-plugin-repo-action\n- Build for Jellyfin 12.0 only (drop Emby and Jellyfin 10.11 targets)\n- Move packaging script to scripts/package.py and add test.yaml CI workflow\n- Adopt extractsubs workflow model (release/test/codeql) on main branch",
+        "checksum": "d3265ca110aa071d99fb437abbe79efb",
+        "sourceUrl": "https://github.com/Generator/jellyfin-plugin-wyzie/releases/download/v1.0.5/Jellyfin.Plugin.Wyzie.zip",
+        "targetAbi": "12.0.0.0",
+        "timestamp": "2026-08-28T17:45:08Z",
+        "version": "1.0.5"
+      }
+    ]
+  }
+]
