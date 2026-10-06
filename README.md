@@ -52,8 +52,8 @@ GitHub Release, and the `jellyfin-plugin-repo-action` regenerates
 release.
 
 ```bash
-git tag v1.0.5 -m "Release 1.0.5"
-git push origin v1.0.5
+git tag v1.0.6 -m "Release 1.0.6"
+git push origin v1.0.6
 ```
 
 ## Configuration

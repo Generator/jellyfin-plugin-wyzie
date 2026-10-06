@@ -7,7 +7,7 @@ manifest.json (the jellyfin-plugin-repo-action regenerates the catalog on the
 gh-pages branch from the GitHub release).
 
 Usage:
-    python3 scripts/package.py --version 1.0.5 --repo owner/repo
+    python3 scripts/package.py --version 1.0.6 --repo owner/repo
 """
 from __future__ import annotations
 
