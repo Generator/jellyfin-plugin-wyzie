@@ -1,4 +1,5 @@
 bin/
+docker
 obj/
 *.user
 .vs/

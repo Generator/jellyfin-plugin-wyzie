@@ -29,4 +29,10 @@ public class PluginConfiguration : BasePluginConfiguration
     /// HTTP retries for transient Wyzie errors (429/5xx).
     /// </summary>
     public int MaxRetries { get; set; } = 3;
+
+    /// <summary>
+    /// Remove Wyzie's free-plan ad cue (00:00:00,000 containing store.wyzie.io).
+    /// Checked by default.
+    /// </summary>
+    public bool StripWyzieAdCue { get; set; } = true;
 }

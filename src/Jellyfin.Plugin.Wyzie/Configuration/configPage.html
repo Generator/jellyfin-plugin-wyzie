@@ -56,6 +56,13 @@
           <input is="emby-input" type="number" id="MaxRetries" min="0" max="10" step="1" />
         </div>
 
+        <div class="checkboxContainer">
+          <label>
+            <input is="emby-checkbox" type="checkbox" id="StripWyzieAdCue" />
+            <span>Remove Wyzie ad cue (00:00:00,000 containing store.wyzie.io)</span>
+          </label>
+        </div>
+
         <div>
           <button is="emby-button" type="submit" class="raised button-submit block emby-button">
             <span>Save</span>
@@ -77,6 +84,7 @@
           page.querySelector('#PreferredSource').value = config.PreferredSource || 'all';
           page.querySelector('#PreferredFormat').value = config.PreferredFormat || 'srt';
           page.querySelector('#MaxRetries').value = config.MaxRetries != null ? config.MaxRetries : 3;
+          page.querySelector('#StripWyzieAdCue').checked = config.StripWyzieAdCue !== false;
           Dashboard.hideLoadingMsg();
         });
       }
@@ -95,6 +103,7 @@
           config.PreferredSource = page.querySelector('#PreferredSource').value;
           config.PreferredFormat = page.querySelector('#PreferredFormat').value;
           config.MaxRetries = parseInt(page.querySelector('#MaxRetries').value, 10) || 0;
+          config.StripWyzieAdCue = page.querySelector('#StripWyzieAdCue').checked;
           ApiClient.updatePluginConfiguration(pluginId, config).then(Dashboard.processPluginConfigurationUpdateResult);
         });
         return false;
